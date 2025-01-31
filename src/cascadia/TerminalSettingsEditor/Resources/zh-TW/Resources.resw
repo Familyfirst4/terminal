@@ -568,6 +568,10 @@
     <value>允許 DECRQCRA (Request Checksum of Rectangular Area)</value>
     <comment>{Locked="DECRQCRA"}{Locked="Request Checksum of Rectangular Area"}Header for a control to toggle support for the DECRQCRA control sequence.</comment>
   </data>
+  <data name="Profile_AllowVtClipboardWrite.Header" xml:space="preserve">
+    <value>允許 OSC 52 (Manipulate Selection Data) 寫入剪貼簿</value>
+    <comment>{Locked="OSC 52"}{Locked="Manipulate Selection Data"}Header for a control to toggle support for applications to change the contents of the Windows system clipboard.</comment>
+  </data>
   <data name="Globals_AllowHeadless.Header" xml:space="preserve">
     <value>允許 Windows 終端機 在背景執行</value>
     <comment>Header for a control to toggle support for Windows Terminal to run in the background.</comment>
@@ -2311,5 +2315,9 @@
   </data>
   <data name="Profile_Source_Orphaned.HelpText" xml:space="preserve">
     <value>指示原始建立此配置檔的軟體。</value>
+  </data>
+  <data name="Profile_TabTitleNone" xml:space="preserve">
+    <value>無</value>
+    <comment>Text displayed when the tab title is not defined.</comment>
   </data>
 </root>

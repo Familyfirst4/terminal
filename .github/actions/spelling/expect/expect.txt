@@ -163,6 +163,7 @@ CBN
 cbt
 Ccc
 CCCBB
+CCCDDD
 cch
 CCHAR
 CCmd
@@ -369,6 +370,7 @@ DColor
 dcommon
 DComposition
 dde
+DDDCCC
 DDESHARE
 DDevice
 DEADCHAR
@@ -1354,6 +1356,7 @@ PNMLINK
 pntm
 POBJECT
 Podcast
+POINTERUPDATE
 POINTSLIST
 policheck
 POLYTEXTW
