@@ -14,6 +14,10 @@ class IslandWindow :
     public BaseWindow<IslandWindow>
 {
 public:
+    static bool IsCursorHidden() noexcept;
+    static void HideCursor() noexcept;
+    static void ShowCursorMaybe(const UINT message) noexcept;
+
     IslandWindow() noexcept;
     virtual ~IslandWindow() override;
 
@@ -46,6 +50,7 @@ public:
     void FullscreenChanged(const bool fullscreen);
     void SetAlwaysOnTop(const bool alwaysOnTop);
     void ShowWindowChanged(const bool showOrHide);
+    virtual void SetShowTabsFullscreen(const bool newShowTabsFullscreen);
 
     void FlashTaskbar();
     void SetTaskbarProgress(const size_t state, const size_t progress);
@@ -105,6 +110,7 @@ protected:
     bool _borderless{ false };
     bool _alwaysOnTop{ false };
     bool _fullscreen{ false };
+    bool _showTabsFullscreen{ false };
     bool _fWasMaximizedBeforeFullscreen{ false };
     RECT _rcWindowBeforeFullscreen{};
     RECT _rcWorkBeforeFullscreen{};
@@ -112,6 +118,7 @@ protected:
 
     virtual void _SetIsBorderless(const bool borderlessEnabled);
     virtual void _SetIsFullscreen(const bool fullscreenEnabled);
+
     void _RestoreFullscreenPosition(const RECT& rcWork);
     void _SetFullscreenPosition(const RECT& rcMonitor, const RECT& rcWork);
 
@@ -143,7 +150,7 @@ protected:
     bool _minimizeToNotificationArea{ false };
 
     std::unordered_map<UINT, SystemMenuItemInfo> _systemMenuItems;
-    UINT _systemMenuNextItemId;
+    UINT _systemMenuNextItemId = 0;
     void _resetSystemMenu();
 
 private:
@@ -154,4 +161,6 @@ private:
     // though the total height will take into account the non-client area
     // and the requirements of components hosted in the client area
     static constexpr float minimumHeight = 0;
+
+    inline static bool _cursorHidden;
 };
